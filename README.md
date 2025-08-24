@@ -1,4 +1,38 @@
+---
+license: mit
+language:
+  - en
+tags:
+  - optimization
+  - muon
+  - deep-learning
+  - pytorch
+  - neural-networks
+  - tutorial
+datasets:
+  - mnist
+  - cifar10
+---
+
 # Understanding the Muon Optimizer: Theory and Implementation
+## 📘 Contents
+
+1. [Introduction to Muon](#introduction)
+2. [The Problem: Skewed Singular Values](#1-the-problem-skewed-singular-value-distributions)
+3. [Newton-Schulz Orthogonalization](#3-the-newton-schulz-iteration)
+4. [Muon vs. AdamW](#4-muon-vs-adamw-complementary-not-competitive)
+5. [When to Use Muon](#5-when-to-use-muon)
+6. [Implementation Details](#6-implementation-deep-dive)
+7. [Practical Performance Analysis](#7-performance-evaluation)
+8. [Optimization Techniques](#8-optimization-techniques)
+9. [Lessons Learned](#9-lessons-learned-from-implementing-muon)
+10. [Concludsion](#10-conclusion)
+
+## 🧪 Try It Yourself
+
+The included [Colab notebook](./Muon.ipynb) allows you to run all experiments and implement Muon from scratch.
+
+
 
 ## Introduction
 
@@ -147,7 +181,7 @@ class Muon(optim.Optimizer):
         # ... optimizer implementation ...
 ```
 
-See the accompanying Colab notebook for the sudo code and complete implementation.
+See the accompanying [Colab notebook](./Muon.ipynb) for the sudo code and complete implementation.
 
 ## 7. Performance Evaluation
 
@@ -208,6 +242,28 @@ Muon represents a significant advancement in neural network optimization by addr
 As you build and train your own models, consider Muon for hidden layer optimization, especially during pre-training phases where building new capabilities is the priority.
 
 ---
+## 📖 Citation
+
+If you use this tutorial or implementation in your work, please cite:
+
+```bibtex
+@misc{wei2025muontutorial,
+  author = {Wei, Jen},
+  title = {Understanding and Implementing the Muon Optimizer},
+  year = {2025},
+  howpublished = {\url{https://huggingface.co/datasets/bird-of-paradise/muon-tutorial}}
+}
+```
+
+```bibtex
+@misc{jordan2024muon,
+  author = {Jordan, Keller and Jin, Yuchen and Boza, Vlado and You, Jiacheng and Cesista, Franz and Newhouse, Laker and Bernstein, Jeremy},
+  title = {Muon: An optimizer for hidden layers in neural networks},
+  year = {2024},
+  url = {https://kellerjordan.github.io/posts/muon/}
+}
+```
+
 
 ## Acknowledgments
 
